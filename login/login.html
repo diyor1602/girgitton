@@ -80,13 +80,7 @@
   <body>
     <div class="pin-login-container">
       <h2>Enter Pin Code</h2>
-      <input
-        type="password"
-        class="pin-input"
-        id="pin"
-        maxlength="4"
-        disabled
-      />
+      <input type="text" class="pin-input" id="pin" maxlength="4" disabled />
       <div class="numpad">
         <button onclick="addNumber(1)">1</button>
         <button onclick="addNumber(2)">2</button>
@@ -101,7 +95,7 @@
         <button onclick="addNumber(0)">0</button>
         <button class="delete" onclick="deleteNumber()">←</button>
       </div>
-      <button class="login-btn">Login</button>
+      <button class="login-btn" onclick="login()">Login</button>
     </div>
 
     <script>
@@ -111,18 +105,38 @@
       function addNumber(num) {
         if (pin.length < 4) {
           pin += num;
-          pinInput.value = pin;
+          showPin();
         }
       }
 
       function deleteNumber() {
-        pin = pin.slice(0, -1);
-        pinInput.value = pin;
+        if (pin.length > 0) {
+          pin = pin.slice(0, -1);
+          showPin();
+        }
       }
 
       function clearPin() {
         pin = "";
-        pinInput.value = "";
+        showPin();
+      }
+
+      function showPin() {
+        // Ensure that we only call repeat() with a positive value
+        const maskedPin =
+          pin.length > 1
+            ? "*".repeat(pin.length - 1) + pin[pin.length - 1]
+            : pin;
+        pinInput.value = maskedPin;
+      }
+
+      function login() {
+        if (pin.length === 4) {
+          alert("Logging in with Pin: " + pin);
+          // Add your login functionality here
+        } else {
+          alert("Please enter a 4-digit Pin");
+        }
       }
     </script>
   </body>
