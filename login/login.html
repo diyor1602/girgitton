@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Code Login</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+      }
+      .pin-login-container {
+        text-align: center;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .pin-input {
+        font-size: 24px;
+        letter-spacing: 12px;
+        text-align: center;
+        padding: 10px;
+        width: 180px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        margin-bottom: 20px;
+      }
+      .numpad {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        grid-gap: 10px;
+      }
+      .numpad button {
+        font-size: 22px;
+        padding: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .numpad button:hover {
+        background-color: #0056b3;
+      }
+      .numpad button:active {
+        background-color: #004494;
+      }
+      .numpad .delete {
+        background-color: #ff4d4d;
+      }
+      .numpad .delete:hover {
+        background-color: #cc0000;
+      }
+      .login-btn {
+        margin-top: 20px;
+        padding: 12px 40px;
+        font-size: 18px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .login-btn:hover {
+        background-color: #218838;
+      }
+      .login-btn:active {
+        background-color: #1e7e34;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pin-login-container">
+      <h2>Enter Pin Code</h2>
+      <input
+        type="password"
+        class="pin-input"
+        id="pin"
+        maxlength="4"
+        disabled
+      />
+      <div class="numpad">
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button onclick="clearPin()">C</button>
+        <button onclick="addNumber(0)">0</button>
+        <button class="delete" onclick="deleteNumber()">←</button>
+      </div>
+      <button class="login-btn">Login</button>
+    </div>
+
+    <script>
+      const pinInput = document.getElementById("pin");
+      let pin = "";
+
+      function addNumber(num) {
+        if (pin.length < 4) {
+          pin += num;
+          pinInput.value = pin;
+        }
+      }
+
+      function deleteNumber() {
+        pin = pin.slice(0, -1);
+        pinInput.value = pin;
+      }
+
+      function clearPin() {
+        pin = "";
+        pinInput.value = "";
+      }
+    </script>
+  </body>
+</html>
