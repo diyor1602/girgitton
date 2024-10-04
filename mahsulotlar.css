@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: white; /* White background */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #332fd0; /* Rich blue for sidebar */
+  padding: 30px 10px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #332fd0; /* Blue for border */
+  color: white; /* White for text */
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white; /* White text color */
+  padding: 10px;
+  background-color: #332fd0; /* Rich blue */
+  border-radius: 5px;
+}
+
+.sidebar ul li.active a {
+  background-color: white; /* White for active link */
+  color: #332fd0; /* Rich blue for text */
+}
+
+.sidebar ul li:hover a {
+  background-color: white; /* Hover with white */
+  color: #332fd0; /* Rich blue text */
+  transition: 0.5s;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  background-color: white; /* White for the main content */
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.searchInput {
+  padding: 10px;
+  border: 1px solid #332fd0; /* Rich blue for borders */
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.searchInput input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.searchIcon {
+  font-size: 10px;
+}
+
+.selectInput {
+  padding: 10px;
+  border: 1px solid #332fd0; /* Rich blue for borders */
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.selectInput select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.addBtn {
+  padding: 10px;
+  background-color: #332fd0; /* Rich blue for buttons */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+dialog {
+  border-radius: 10px;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modalInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalInput label {
+  font-weight: 500;
+}
+
+.modalInput input {
+  padding: 10px;
+  border: 1px solid #332fd0; /* Rich blue for input borders */
+  border-radius: 5px;
+}
+
+.modalContent menu {
+  display: flex;
+  gap: 10px;
+}
+
+.modalContent menu button {
+  padding: 10px;
+  background-color: #332fd0; /* Rich blue for modal buttons */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productsTable table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.productsTable table th {
+  background-color: #332fd0; /* Rich blue for table headers */
+  color: white; /* White text */
+  padding: 5px;
+  border: none;
+}
+
+.productsTable table td {
+  border: 1px solid #332fd0; /* Rich blue for borders */
+  padding: 5px;
+  text-align: center;
+  border: none;
+}
+
+.productsTable table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light grey for even rows */
+}
+
+.productsTable table td img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 5px;
+  background-color: transparent;
+  color: #332fd0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editBtn i,
+.deleteBtn i {
+  font-size: 20px;
+}
